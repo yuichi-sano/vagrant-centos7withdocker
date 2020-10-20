@@ -40,9 +40,13 @@ C:\Users\HOGE\Documents\TESTPJ\
 ### ダウンロードしたboxファイルを仮想環境を構築する場所に配置します。
 centos7withdocker.boxが
 配置されていることが確認できたら下記コマンドを実行します。
+
 ※cmdでもpowershellでも可、macだったらzshなど
+
 vagrant box add centos7withdocker centos7withdocker.box
+
 vagrant init centos7withdocker
+
 上記の実施が完了したら
 
 ###  本書と同梱されている。VagrantFileを仮想環境を構築する場所に配置します。
@@ -51,37 +55,59 @@ vagrant up
 
 ## SSH
 ### 初期ログイン情報
+
 host: 192.168.33.202
+
 port: 22
+
 user: root
+
 pass: vagrant
 
 ※ipは不都合があればVagrantFileないに記載されている同IPを変更いただき
+
 vagrant halt
+
 vagrant up  --provision
+
 にてIPを変更ください。
+
 なお、privateIPなので社内などのLANに影響はございません
 
 ## 動作確認
 sshログインいただき
+
 docker -v
+
 等でversionを確認ください
 
 ## rootでインストール済み
 git
+
 docker
+
 docker-compose
+
 nginx
+
 phpenv(おまけ)
+
 大きくは上記のみがインストールされています。
+
 必要に応じてyum installしてください。
 ### 開発のリーディング担当の方
 インストールものや、linux上の設定などなど開発メンバに共有する必要がある場合。
+
 vagrant package [package名] --output [box名].box
+
 とかで新たにboxを作ってあげてください。
+
 そのボックスを配布し開発メンバは
+
 vagrant box add [package名] [box名].box
+
 などとし、VagratnFileを良しなに書き換えて起動しなおしをお願いします。
+
 ※上記よりも、boxファイルをver管理して、名前は変えずdestoryとかでちゃんと作り直すのをお勧めします。
 
 ## TIPS
