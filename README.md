@@ -20,10 +20,15 @@ WindowsBiosの設定で、仮想環境の実行を許可する必要があるか
 vagrant -v
 ### Vagrant 必要プラグイン をインストール
 ※cmdでもpowershellでも可、macだったらzshなど
+
 vagrant plugin update
+
 vagrant plugin install vagrant-vbguest
+
 vagrant plugin install vagrant-disksize
+
 ※※Macの場合のみ※※以下コマンドを実行します。
+
 sudo pfctl -ef vagrant-web-packet-filtering.conf
 
 ## 仮想環境を構築する場所
