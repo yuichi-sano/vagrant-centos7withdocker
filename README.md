@@ -16,16 +16,15 @@ https://www.vagrantup.com/downloads.html
 ### windowsの場合
 WindowsBiosの設定で、仮想環境の実行を許可する必要があるかもしれません
 ## pre serup
-1.  **Vagrant**がインストールされていることを確認します。
-    **vagrant** -v
-    
-2.  **Vagrant** 必要プラグイン をインストール
+### Vagrantがインストールされていることを確認します。
+vagrant -v
+### Vagrant 必要プラグイン をインストール
 ※cmdでもpowershellでも可、macだったらzshなど
-**vagrant** plugin update
-**vagrant** plugin install **vagrant**-vbguest
-**vagrant** plugin install **vagrant**-disksize
+vagrant plugin update
+vagrant plugin install vagrant-vbguest
+vagrant plugin install vagrant-disksize
 ※※Macの場合のみ※※以下コマンドを実行します。
-sudo pfctl -ef **vagrant**-web-packet-filtering.conf
+sudo pfctl -ef vagrant-web-packet-filtering.conf
 
 ## 仮想環境を構築する場所
 ### 例（windows）
@@ -33,7 +32,7 @@ C:\Users\HOGE\Documents\TESTPJ\
 
 以降の手順は上記ディレクトリ直下にて行います。
 ## Boxの追加とvagrant初期設定
-1. ダウンロードしたboxファイルを仮想環境を構築する場所に配置します。
+### ダウンロードしたboxファイルを仮想環境を構築する場所に配置します。
 centos7withdocker.boxが
 配置されていることが確認できたら下記コマンドを実行します。
 ※cmdでもpowershellでも可、macだったらzshなど
@@ -41,8 +40,8 @@ vagrant box add centos7withdocker centos7withdocker.box
 vagrant init centos7withdocker
 上記の実施が完了したら
 
-2.  本書と同梱されている。VagrantFileを仮想環境を構築する場所に配置します。
-3. Vagrantを起動します。
+###  本書と同梱されている。VagrantFileを仮想環境を構築する場所に配置します。
+### Vagrantを起動します。
 vagrant up
 
 ## SSH
